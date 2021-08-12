@@ -56,7 +56,7 @@ function changeColor() {
 refs.stopBtn.addEventListener('click', onStopBtnClick);
 
 function onStopBtnClick() {
-  console.log('жму на стопе');
+  console.log('жму на стоп');
   clearInterval(id);
   refs.startBtn.addEventListener('click', onStartBtnClick);
 };
