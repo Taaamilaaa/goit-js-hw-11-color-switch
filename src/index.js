@@ -1,9 +1,8 @@
 const refs = {
     startBtn: document.querySelector('[data-action="start"]'),
     stopBtn: document.querySelector('[data-action="stop"]'),
-    body: document.querySelector('body')
+    body: document.querySelector('body'),
 };
-
 
 const colors = [
   '#FFFFFF',
@@ -14,22 +13,12 @@ const colors = [
   '#795548',
 ];
 
-refs.body.classList.
-
-refs.startBtn.addEventListener('click', switcher);
-
-const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-function switcher(arr) {
-   
-refs.body.classList.add()
-}
-
-
-
-
+// console.log(colors[5]);
+console.log(refs.body);
+console.log(colors[5]);
+//генерация случайного цвета из массива
+//навесить на кнопку старта  слушателя
+//описать функцию сет интервал
 
 
 
