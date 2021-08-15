@@ -13,57 +13,27 @@ const colors = [
   '#795548',
 ];
 
+refs.startBtn.addEventListener('click', onStartBtnClick);
+refs.stopBtn.addEventListener('click', onStopBtnClick);
 
-// генерация случайного числа
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-let arrOfIndex = [];
-let min;
-let max;
-
-function findRandomNumber(arr) {
-  arr.forEach(el => {
-    arrOfIndex.push(arr.indexOf(el))
-  }); 
-  
-  min = arrOfIndex[0];
-  max = arrOfIndex.length - 1;
-  arrOfIndex = [];
- return randomIntegerFromInterval(min, max)
-  
-};
-
-//меняем цвет фона
-
-refs.startBtn.addEventListener('click', onStartBtnClick);
-
 let id;
 
-function onStartBtnClick() {  
+function onStartBtnClick() {
   id = setInterval(() => {
-refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length-1)]
-
-  }
-  , 1000);
+    refs.body.style.backgroundColor =
+      colors[randomIntegerFromInterval(0, colors.length - 1)];
+  }, 1000);
   console.log('жму на кнопку старт');
   refs.startBtn.removeEventListener('click', onStartBtnClick);
-}; 
-
-function changeColor() {
-  refs.body.style.backgroundColor = `${colors[findRandomNumber(colors)]}`
-};
-
-//Останавливаем замену цвета
-
-refs.stopBtn.addEventListener('click', onStopBtnClick);
+}
 
 function onStopBtnClick() {
   console.log('жму на стоп');
   clearInterval(id);
   refs.startBtn.addEventListener('click', onStartBtnClick);
-};
+}
 
-
-//refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length-1)]
