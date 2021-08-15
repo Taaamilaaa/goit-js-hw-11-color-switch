@@ -42,7 +42,11 @@ refs.startBtn.addEventListener('click', onStartBtnClick);
 let id;
 
 function onStartBtnClick() {  
-  id = setInterval(changeColor, 1000);
+  id = setInterval(() => {
+refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length-1)]
+
+  }
+  , 1000);
   console.log('жму на кнопку старт');
   refs.startBtn.removeEventListener('click', onStartBtnClick);
 }; 
@@ -62,4 +66,4 @@ function onStopBtnClick() {
 };
 
 
-
+//refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length-1)]
